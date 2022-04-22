@@ -1,0 +1,19 @@
+#=============================
+# AUTO forward-looking snake
+#=============================
+
+# Load the files snakeNL.f90 and c.snakeNL into the AUTO
+# command interpreter.
+snakeNL = load('snakeNL')
+# Run and store the result in the Python variable mu
+mu = run(snakeNL)
+mu = mu + run(mu('UZ1'),ICP=[2,1],UZSTOP={2:200.0})
+#mu = relabel(mu)
+# Save to b.mu, s.mu, and d.mu
+save(mu,'mu')
+# Plot bifurcation diagram
+p = plot(mu)
+#p.config(bifurcation_y=['Th(1)'])
+#clean the directory
+#clean()
+wait()
