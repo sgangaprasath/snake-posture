@@ -1,15 +1,14 @@
-#==========================
-# AUTO upward-looking snake
-#==========================
+#=============================
+# AUTO forward-looking snake
+#=============================
 
 # Load the files snakeNL.f90 and c.snakeNL into the AUTO
 # command interpreter.
 snakeNL = load('snakeNL')
 # Run and store the result in the Python variable mu
 mu = run(snakeNL)
-mu = run(mu('UZ1'),ICP=[2,1],UZSTOP={2:100.0})
-#mu = mu+run(mu('BP1'),ISW=-1,UZR={3:4})
-mu = relabel(mu)
+#mu = mu + run(mu('UZ1'),ICP=[2,1],UZSTOP={2:200.0})
+#mu = relabel(mu)
 # Save to b.mu, s.mu, and d.mu
 save(mu,'mu')
 # Plot bifurcation diagram
